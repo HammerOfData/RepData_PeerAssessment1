@@ -3,6 +3,8 @@ title: "PA1_template.Rmd"
 output: html_document
 ---
 ## Info
+This is the peer assigment 1 in the Coursera Course "Reproducible Research".
+All questions are repeated to ease the reading for the evaluaters.
 
 ## Settings
 It is given in the assignment that the code should always be visible.
@@ -15,7 +17,7 @@ The data is stored in a zip folder called activity.zip.
 ```{r}
 unzip("activity.zip") # The data folder is unzipped
 data <- read.csv("activity/activity.csv",colClasses = c("integer","Date","integer")) # Read the data and format
-#attach(data) # Attach so objects can be accessed by their names
+
 ```
 Lets inspect the data
 ```{r}
@@ -32,8 +34,8 @@ attach(data_noNA) # Attach so objects can be accessed by their names
 For this part the missing values are ignored
 
 ### Calculate the total number of steps taken per day
-Get the "dplyr" package to compactly do calculations.
-```{r}
+Get the "dplyr" package to do compactly written calculations.
+```{r results='hide', message=FALSE, warning=FALSE}
 library(dplyr)
 ```
 Calculate the total number of steps taken per day
@@ -86,10 +88,8 @@ NA's were only observed in the interval column, hence the total number of rows w
 sum(is.na(data))
 ```
 ### Devise a strategy for filling in all of the missing values in the dataset
-As we have already calculated the mean for each interval I will use the rounded number of steps to fill the missing values as non-integer steps.
-```{r}
+As we have already calculated the mean for each interval I will use the rounded number of steps to fill the missing values.
 
-```
 
 ### Create a new dataset that is equal to the original dataset but with the missing data filled in.
 ```{r}
@@ -100,6 +100,7 @@ head(data_filled)
 ```
 
 ### Make a histogram of the total number of steps taken each day and Calculate and report the mean and median total number of steps taken per day. Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?
+Use the ggplot to make a histogram.
 ```{r}
 ggplot(data_filled ,aes(date,steps))+geom_histogram(stat = "identity",fill="darkgreen")+labs(x="Date",y="Total steps per day")
 TotalSteps_filled <- data_filled %>% group_by(date) %>% summarise(sum(steps))

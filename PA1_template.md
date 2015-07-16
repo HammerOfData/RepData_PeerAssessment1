@@ -3,6 +3,8 @@ title: "PA1_template.Rmd"
 output: html_document
 ---
 ## Info
+This is the peer assigment 1 in the Coursera Course "Reproducible Research".
+All questions are repeated to ease the reading for the evaluaters.
 
 ## Settings
 It is given in the assignment that the code should always be visible.
@@ -17,7 +19,6 @@ The data is stored in a zip folder called activity.zip.
 ```r
 unzip("activity.zip") # The data folder is unzipped
 data <- read.csv("activity/activity.csv",colClasses = c("integer","Date","integer")) # Read the data and format
-#attach(data) # Attach so objects can be accessed by their names
 ```
 Lets inspect the data
 
@@ -53,51 +54,71 @@ attach(data_noNA) # Attach so objects can be accessed by their names
 ```
 
 ```
-## The following object is masked from TotalSteps_filled (pos = 5):
+## The following object is masked from MeanStepsInterval (pos = 3):
+## 
+##     interval
+## 
+## The following objects are masked from data_noNA (pos = 5):
+## 
+##     date, interval, steps
+## 
+## The following object is masked from TotalSteps_filled (pos = 6):
 ## 
 ##     date
 ## 
-## The following object is masked from MeanStepsInterval (pos = 6):
+## The following object is masked from MeanStepsInterval (pos = 7):
 ## 
 ##     interval
 ## 
-## The following objects are masked from data_noNA (pos = 8):
+## The following objects are masked from data_noNA (pos = 9):
 ## 
 ##     date, interval, steps
 ## 
-## The following object is masked from TotalSteps_filled (pos = 10):
+## The following object is masked from TotalSteps_filled (pos = 12):
 ## 
 ##     date
 ## 
-## The following object is masked from MeanStepsInterval (pos = 11):
+## The following object is masked from MeanStepsInterval (pos = 13):
 ## 
 ##     interval
 ## 
-## The following objects are masked from data_noNA (pos = 13):
+## The following objects are masked from data_noNA (pos = 15):
 ## 
 ##     date, interval, steps
 ## 
-## The following object is masked from MeanStepsInterval (pos = 14):
+## The following object is masked from TotalSteps_filled (pos = 17):
+## 
+##     date
+## 
+## The following object is masked from MeanStepsInterval (pos = 18):
 ## 
 ##     interval
 ## 
-## The following objects are masked from data_noNA (pos = 16):
+## The following objects are masked from data_noNA (pos = 20):
 ## 
 ##     date, interval, steps
 ## 
-## The following object is masked from MeanStepsInterval (pos = 17):
+## The following object is masked from MeanStepsInterval (pos = 21):
 ## 
 ##     interval
 ## 
-## The following objects are masked from data_noNA (pos = 19):
+## The following objects are masked from data_noNA (pos = 23):
 ## 
 ##     date, interval, steps
 ## 
-## The following objects are masked from data (pos = 23):
+## The following object is masked from MeanStepsInterval (pos = 24):
+## 
+##     interval
+## 
+## The following objects are masked from data_noNA (pos = 26):
 ## 
 ##     date, interval, steps
 ## 
-## The following objects are masked from data (pos = 24):
+## The following objects are masked from data (pos = 30):
+## 
+##     date, interval, steps
+## 
+## The following objects are masked from data (pos = 31):
 ## 
 ##     date, interval, steps
 ```
@@ -106,7 +127,7 @@ attach(data_noNA) # Attach so objects can be accessed by their names
 For this part the missing values are ignored
 
 ### Calculate the total number of steps taken per day
-Get the "dplyr" package to compactly do calculations.
+Get the "dplyr" package to do compactly written calculations.
 
 ```r
 library(dplyr)
@@ -121,23 +142,31 @@ attach(StepsPerDay) # Attach so objects can be accessed by their names
 ```
 
 ```
-## The following objects are masked from StepsPerDay (pos = 8):
+## The following objects are masked from StepsPerDay (pos = 5):
 ## 
 ##     dateGroup, TotalSteps
 ## 
-## The following objects are masked from StepsPerDay (pos = 10):
+## The following objects are masked from StepsPerDay (pos = 9):
 ## 
 ##     dateGroup, TotalSteps
 ## 
-## The following objects are masked from StepsPerDay (pos = 13):
+## The following objects are masked from StepsPerDay (pos = 15):
 ## 
 ##     dateGroup, TotalSteps
 ## 
-## The following objects are masked from StepsPerDay (pos = 16):
+## The following objects are masked from StepsPerDay (pos = 17):
 ## 
 ##     dateGroup, TotalSteps
 ## 
-## The following objects are masked from StepsPerDay (pos = 21):
+## The following objects are masked from StepsPerDay (pos = 20):
+## 
+##     dateGroup, TotalSteps
+## 
+## The following objects are masked from StepsPerDay (pos = 23):
+## 
+##     dateGroup, TotalSteps
+## 
+## The following objects are masked from StepsPerDay (pos = 28):
 ## 
 ##     dateGroup, TotalSteps
 ```
@@ -212,47 +241,63 @@ attach(MeanStepsInterval)
 ## 
 ##     interval
 ## 
-## The following objects are masked from MeanStepsInterval (pos = 8):
+## The following objects are masked from MeanStepsInterval (pos = 5):
 ## 
 ##     interval, MeanSteps
 ## 
-## The following object is masked from data_noNA (pos = 10):
+## The following object is masked from data_noNA (pos = 7):
 ## 
 ##     interval
 ## 
-## The following objects are masked from MeanStepsInterval (pos = 13):
+## The following objects are masked from MeanStepsInterval (pos = 9):
 ## 
 ##     interval, MeanSteps
 ## 
-## The following object is masked from data_noNA (pos = 15):
+## The following object is masked from data_noNA (pos = 11):
 ## 
 ##     interval
 ## 
-## The following objects are masked from MeanStepsInterval (pos = 16):
+## The following objects are masked from MeanStepsInterval (pos = 15):
 ## 
 ##     interval, MeanSteps
 ## 
-## The following object is masked from data_noNA (pos = 18):
+## The following object is masked from data_noNA (pos = 17):
 ## 
 ##     interval
 ## 
-## The following objects are masked from MeanStepsInterval (pos = 19):
+## The following objects are masked from MeanStepsInterval (pos = 20):
 ## 
 ##     interval, MeanSteps
 ## 
-## The following object is masked from MeanStepsInterval (pos = 20):
+## The following object is masked from data_noNA (pos = 22):
+## 
+##     interval
+## 
+## The following objects are masked from MeanStepsInterval (pos = 23):
+## 
+##     interval, MeanSteps
+## 
+## The following object is masked from data_noNA (pos = 25):
+## 
+##     interval
+## 
+## The following objects are masked from MeanStepsInterval (pos = 26):
+## 
+##     interval, MeanSteps
+## 
+## The following object is masked from MeanStepsInterval (pos = 27):
 ## 
 ##     MeanSteps
 ## 
-## The following object is masked from data_noNA (pos = 21):
+## The following object is masked from data_noNA (pos = 28):
 ## 
 ##     interval
 ## 
-## The following object is masked from data (pos = 25):
+## The following object is masked from data (pos = 32):
 ## 
 ##     interval
 ## 
-## The following object is masked from data (pos = 26):
+## The following object is masked from data (pos = 33):
 ## 
 ##     interval
 ```
@@ -278,7 +323,7 @@ sum(is.na(data))
 ## [1] 2304
 ```
 ### Devise a strategy for filling in all of the missing values in the dataset
-As we have already calculated the mean for each interval I will use the rounded number of steps to fill the missing values as non-integer steps.
+As we have already calculated the mean for each interval I will use the rounded number of steps to fill the missing values.
 
 
 ### Create a new dataset that is equal to the original dataset but with the missing data filled in.
@@ -301,12 +346,13 @@ head(data_filled)
 ```
 
 ### Make a histogram of the total number of steps taken each day and Calculate and report the mean and median total number of steps taken per day. Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?
+Use the ggplot to make a histogram.
 
 ```r
 ggplot(data_filled ,aes(date,steps))+geom_histogram(stat = "identity",fill="darkgreen")+labs(x="Date",y="Total steps per day")
 ```
 
-![plot of chunk unnamed-chunk-15](figure/unnamed-chunk-15-1.png) 
+![plot of chunk unnamed-chunk-14](figure/unnamed-chunk-14-1.png) 
 
 ```r
 TotalSteps_filled <- data_filled %>% group_by(date) %>% summarise(sum(steps))
@@ -319,35 +365,47 @@ attach(TotalSteps_filled)
 ## 
 ##     date
 ## 
-## The following objects are masked from TotalSteps_filled (pos = 8):
+## The following object is masked from data_noNA (pos = 8):
+## 
+##     date
+## 
+## The following objects are masked from TotalSteps_filled (pos = 9):
 ## 
 ##     date, TotalSteps_All
 ## 
-## The following object is masked from data_noNA (pos = 11):
+## The following object is masked from data_noNA (pos = 12):
 ## 
 ##     date
 ## 
-## The following objects are masked from TotalSteps_filled (pos = 13):
+## The following objects are masked from TotalSteps_filled (pos = 15):
 ## 
 ##     date, TotalSteps_All
 ## 
-## The following object is masked from data_noNA (pos = 16):
+## The following object is masked from data_noNA (pos = 18):
 ## 
 ##     date
 ## 
-## The following object is masked from data_noNA (pos = 19):
+## The following objects are masked from TotalSteps_filled (pos = 20):
+## 
+##     date, TotalSteps_All
+## 
+## The following object is masked from data_noNA (pos = 23):
 ## 
 ##     date
 ## 
-## The following object is masked from data_noNA (pos = 22):
+## The following object is masked from data_noNA (pos = 26):
 ## 
 ##     date
 ## 
-## The following object is masked from data (pos = 26):
+## The following object is masked from data_noNA (pos = 29):
 ## 
 ##     date
 ## 
-## The following object is masked from data (pos = 27):
+## The following object is masked from data (pos = 33):
+## 
+##     date
+## 
+## The following object is masked from data (pos = 34):
 ## 
 ##     date
 ```
@@ -444,7 +502,7 @@ xyplot(MeanStepsInterval$MeanSteps ~ MeanStepsInterval$interval | MeanStepsInter
        layout = c(1, 2), type = "l", xlab = "Interval", ylab = "Number of steps")
 ```
 
-![plot of chunk unnamed-chunk-19](figure/unnamed-chunk-19-1.png) 
+![plot of chunk unnamed-chunk-18](figure/unnamed-chunk-18-1.png) 
 
 
 
